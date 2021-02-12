@@ -74,6 +74,7 @@ yum_python_check() {
 		echo "Python3.6 未安装在此系统上，正在进行安装"
 		yum install python3 -y >>/dev/null 2>&1
 		update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 >>/dev/null 2>&1
+		PYV=$(which python3.6)
 	fi
 	if command -v pip3 >>/dev/null 2>&1; then
 		echo 'pip 存在 . . .'
